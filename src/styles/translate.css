@@ -1,0 +1,296 @@
+.translate-page {
+
+  width: 393px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  background-image:
+    url("../assets/translate-bg.png");
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* 어둡게 */
+
+.translate-overlay {
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: rgba(0,0,0,0.40);
+
+  padding-top: 70px;
+
+  box-sizing: border-box;
+}
+
+/* 상단 */
+
+.translate-header {
+
+  width: 330px;
+
+  margin: 0 auto;
+
+  position: relative;
+}
+
+/* 뒤로가기 */
+
+.back-btn {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  border-radius: 43px;
+
+  background: #CEDBFF;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.back-btn img {
+
+  width: 18px;
+  height: 18px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* 제목 */
+
+.header-text {
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.header-text h1 {
+
+  color: #FFF;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 23px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+/* 설명 */
+
+.header-text p {
+
+  color: #FFF;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+}
+
+/* 검색창 */
+
+.search-box {
+
+  width: 330px;
+  height: 46px;
+
+  margin: 40px auto 0;
+
+  border-radius: 14px;
+
+  border: 1.5px solid #C77DFF;
+
+  background: #FFF;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+}
+
+/* 검색 아이콘 */
+
+.search-icon-img {
+
+  width: 22px;
+  height: 22px;
+
+  margin-right: 12px;
+
+  object-fit: contain;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+/* input */
+
+.search-box input {
+
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+
+  color: #000;
+}
+
+.search-box input::placeholder {
+
+  color: #8B8B8B;
+}
+
+/* 보내기 버튼 */
+
+.search-btn {
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10px;
+
+  flex-shrink: 0;
+}
+
+/* 보내기 아이콘 */
+
+.send-icon-img {
+
+  width: 29px;
+  height: 29px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* 결과 카드 */
+
+.result-card {
+
+  width: 330px;
+
+  margin: 40px auto 0;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background: #F4F4F4;
+}
+
+.result-card h2 {
+
+  color: #222;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+.result-card p {
+
+  color: #666;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* 검색 실패 */
+
+.empty-card {
+
+  width: 316px;
+
+  margin: 120px auto 0;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  border-radius: 17px;
+
+  border: 1px dashed #8F83FF;
+
+  background: rgba(81, 77, 115, 0.5);
+
+  backdrop-filter: blur(1px);
+
+  text-align: center;
+
+  color: #FFF;
+
+  font-family: "Gowun Dodum";
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+  
+}
