@@ -28,7 +28,7 @@ body {
   position: absolute;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(9, 6, 32, 0.40);;
 
   z-index: 1;
 }
@@ -43,25 +43,43 @@ body {
   position: relative;
   z-index: 10;
 
-  margin-top: 70px;
+  margin-top: 38px;
 
   color: white;
 }
 
 .logo {
-  width: 139.602px;
+  width: 200px;
 }
 
 .title {
-  font-family: "Quicksand", sans-serif;
+
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 55px;
-  font-weight: 300;
 
-  margin-top: 18px;
-  margin-bottom: 0;
+  font-style: normal;
 
-  color: white;
+  font-weight: 500;
+
+  line-height: normal;
+
+  background: radial-gradient(
+    circle at center,
+    #FEE854 0%,
+    #E5D56A 30%,
+    #9E9E9E 75%
+  );
+ 
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  color: transparent;
+
+  margin-top: 6px;
 }
 
 .subtitle {
@@ -74,76 +92,25 @@ body {
 
   text-align: center;
 
-  margin-top: 34px;
+  margin-top: -7px;
+
+  margin-bottom: 34px;
 
   color: white;
 }
 
-/* 버튼 */
-
-.main-btn {
-  width: 320px;
-  height: 60px;
-
-  border: none;
-  border-radius: 18px;
-
-  margin-top: 22px;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-
-  position: relative;
-  z-index: 10;
-}
-
-.main-btn:hover {
-  transform: scale(1.03);
-}
+/* 노란 버튼 */
 
 .gold-btn {
+
   width: 351px;
   height: 56px;
 
-  padding: 3px;
-
   border: none;
 
   border-radius: 12px;
 
-  background: linear-gradient(
-    90deg,
-    #362E00 0%,
-    #C2B248 50%,
-    #362E00 100%
-  );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.gold-inner {
-  width: 100%;
-  height: 100%;
-
-  border-radius: 12px;
-
-  border: 1.5px solid #362E00;
-
-  background: linear-gradient(
-    90deg,
-    #362E00 0%,
-    #C2B248 50%,
-    #362E00 100%
-  );
+  background: #CCB933;
 
   display: flex;
   justify-content: center;
@@ -156,43 +123,32 @@ body {
 
   color: #000;
 
-  box-shadow:
-    inset 0 0 10px rgba(0,0,0,0.35);
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+
+    margin-bottom: 10px;
 }
 
-/* 터치 상태 */
+/* 터치 시 효과 */
+
 .gold-btn:active {
-  background: linear-gradient(
-    90deg,
-    #655800 0%,
-    #D8C63A 50%,
-    #655800 100%
-  );
+
+  background: #CCB933;
+
+  transform: scale(0.98);
 
   box-shadow:
-    0 0 10px rgba(255, 221, 0, 0.20);
-
-  transform: scale(0.99);
-}
-
-.gold-btn:active .gold-inner {
-  border: 1.5px solid #362E00;
-
-  background: linear-gradient(
-    90deg,
-    #655800 0%,
-    #D8C63A 50%,
-    #655800 100%
-  );
-
-  box-shadow:
-    inset 0 0 6px rgba(255,255,255,0.05),
-    inset 0 0 8px rgba(0,0,0,0.22);
+     0 0 18px rgba(212, 191, 45, 0.55),
+     0 0 35px rgba(212, 191, 45, 0.30);
 }
 
 /* 보라 버튼 기본 */
 
-.purple {
+.purple-btn {
   width: 351px;
   height: 56px;
 
@@ -226,16 +182,17 @@ body {
 }
 
 
-/* 터치 시 */
+/* 터치 시 효과 */
 
-.purple:active {
+.purple-btn:active {
 
   border: 2px solid #6F6F6F;
 
   background: rgba(84, 64, 173, 0.68);
 
   box-shadow:
-    0 0 20px 0 #5440AD;
+    0 0 18px rgba(84, 64, 173, 0.55),
+    0 0 35px rgba(84, 64, 173, 0.28);
 
   transform: scale(0.99);
 }
@@ -316,53 +273,5 @@ body {
   opacity: 0.7;
 
   pointer-events: none;
-}
-
-/* 궤도 */
-
-.orbit-svg {
-  position: absolute;
-
-  bottom: 0;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 430px;
-
-  opacity: 0.9;
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-/* 행성 */
-
-.planet {
-  position: absolute;
-
-  z-index: 3;
-}
-
-.earth {
-  width: 75px;
-
-  bottom: 5px;
-  left: 5px;
-}
-
-.planet1 {
-  width: 60px;
-
-  bottom: 180px;
-  left: 120px;
-}
-
-.planet2 {
-  width: 95px;
-
-  bottom: 120px;
-  right: -15px;
 }
 

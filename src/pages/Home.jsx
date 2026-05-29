@@ -1,12 +1,8 @@
 import "../styles/home.css";
 
 import background from "../assets/background.png";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 
-import earth from "../assets/earth.png";
-import planet1 from "../assets/planet1.png";
-import planet2 from "../assets/planet2.png";
-import orbit from "../assets/orbit.svg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -24,9 +20,6 @@ function Home() {
       {/* 검은 오버레이 */}
       <div className="overlay"></div>
 
-      {/* 행성 */}
-
-      <img src={orbit} alt="orbit" className="orbit-svg" />
 
       {/* 메인 콘텐츠 */}
       <div className="content">
@@ -44,13 +37,11 @@ function Home() {
         className="gold-btn"
         onClick={() => navigate("/loading")}
         >
-            <div className="gold-inner">
-                ✦ 향 취향 찾기
-            </div>
+          ✦ 향 취향 찾기
         </button>
 
         <button 
-        className="main-btn purple"
+        className="purple-btn"
         onClick={() => navigate("/translate")}
         >
           ✦ 향수어 번역하기

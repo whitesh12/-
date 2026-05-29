@@ -8,6 +8,10 @@ import searchIcon from "../assets/search.svg";
 
 import sendIcon from "../assets/send.svg";
 
+// mock 데이터 import
+import { mockPerfumeData }
+from "../mock/mockData";
+
 function Translate() {
 
   // 검색어 저장
@@ -21,26 +25,80 @@ function Translate() {
     useState(false);
 
   // 검색 버튼 클릭
-  const handleSearch = () => {
+  const handleSearch = async () => {
+
+    // 공백 제거
+    const trimmedKeyword =
+      keyword.trim();
+
+    // 빈값 검색 방지
+    if (!trimmedKeyword) {
+
+      setResult(null);
+
+      setIsSearched(false);
+
+      return;
+    }
 
     setIsSearched(true);
 
-    // mock 데이터 테스트
-    if (keyword === "우디") {
+    try {
 
-      setResult({
+      // -------------------
+      // 백엔드 연결 시 사용
+      // -------------------
 
-        korean: "우디",
+      /*
+      const response = await fetch(
+        `백엔드주소?keyword=${trimmedKeyword}`
+      );
 
-        english: "Woody",
+      const data = await response.json();
 
-        description:
-          "나무, 숲, 흙 같은 차분하고 따뜻한 향"
-      });
+      setResult(data);
+      */
 
-    } else {
+      // 임시로 강제 에러 발생
+      throw new Error();
 
-      setResult(null);
+    } catch (error) {
+
+      // -------------------
+      // mock 데이터 검색
+      // -------------------
+
+      const foundData =
+        mockPerfumeData.find((item) => {
+
+          return (
+
+            item.term
+              .toLowerCase()
+              .includes(
+                trimmedKeyword.toLowerCase()
+              )
+
+            ||
+
+            item.english
+              .toLowerCase()
+              .includes(
+                trimmedKeyword.toLowerCase()
+              )
+          );
+        });
+
+      // 검색 성공
+      if (foundData) {
+
+        setResult(foundData);
+
+      } else {
+
+        // 검색 실패
+        setResult(null);
+      }
     }
   };
 
@@ -103,6 +161,15 @@ function Translate() {
             onChange={(e) =>
               setKeyword(e.target.value)
             }
+
+            // 엔터 검색
+            onKeyDown={(e) => {
+
+              if (e.key === "Enter") {
+
+                handleSearch();
+              }
+            }}
           />
 
           {/* 전송 버튼 */}
@@ -128,23 +195,39 @@ function Translate() {
         {
           result && (
 
-            <div className="result-card">
+            <>
 
-              <h2>
+              {/* 카테고리 */}
 
-                {result.korean}
+              <div className="category-title">
 
-                {" / "}
+                #
+                {" "}
+                {result.category}
 
-                {result.english}
+              </div>
 
-              </h2>
+              {/* 결과 카드 */}
 
-              <p>
-                {result.description}
-              </p>
+              <div className="result-card">
 
-            </div>
+                <h2>
+
+                  {result.term}
+
+                  {" / "}
+
+                  {result.english}
+
+                </h2>
+
+                <p>
+                  {result.description}
+                </p>
+
+              </div>
+
+            </>
           )
         }
 

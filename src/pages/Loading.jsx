@@ -1,7 +1,7 @@
 import "../styles/loading.css";
 
 import background from "../assets/background.png";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import perfume from "../assets/perfume.png";
 
 function Loading() {
@@ -18,11 +18,7 @@ function Loading() {
         Scent Orbit
       </h1>
 
-      <img
-        src={perfume}
-        alt=""
-        className="loading-perfume"
-      />
+     
 
       <p className="loading-text">
         나만의 <br />

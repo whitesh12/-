@@ -35,7 +35,7 @@
   position: absolute;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.40);
+  background: rgba(9, 6, 32, 0.40);
 
   z-index: 1;
 }
@@ -44,11 +44,11 @@
 /* 로고 */
 
 .loading-logo {
-  width: 140px;
+  width: 200px;
 
   position: absolute;
 
-  top: 118px;
+  top: 80px;
   left: 50%;
 
   transform: translateX(-50%);
@@ -60,57 +60,42 @@
 /* Scent Orbit */
 
 .loading-title {
+
   position: absolute;
 
-  top: 250px;
+  top: 275px;
   left: 50%;
 
   transform: translateX(-50%);
 
-  color: #FFF;
-
-  font-family: "Quicksand", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 55px;
 
   font-style: normal;
 
-  font-weight: 300;
+  font-weight: 500;
 
   line-height: normal;
 
   white-space: nowrap;
 
+  background: radial-gradient(
+    circle at center,
+    #FEE854 0%,
+    #E5D56A 30%,
+    #9E9E9E 75%
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  color: transparent;
+
   z-index: 3;
-}
-
-
-/* perfume 이미지 */
-
-.loading-perfume {
-  width: 418px;
-  height: 435px;
-
-  position: absolute;
-
-  top: 280px;
-  left: 50%;
-
-  transform:
-    translateX(-50%)
-    rotate(1.685deg);
-
-  opacity: 0.9;
-
-  filter:
-    brightness(0.9)
-    contrast(1);
-
-  z-index: 2;
-
-  object-fit: contain;
-
-  animation: floatingOrbit 6s ease-in-out infinite;
 }
 
 
@@ -119,7 +104,7 @@
 .loading-text {
   position: absolute;
 
-  top: 390px;
+  top: 400px;
   left: 50%;
 
   transform: translateX(-50%);
