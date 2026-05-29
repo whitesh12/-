@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/translate.css";
 
 // 아이콘 및 에셋 import
@@ -11,234 +12,121 @@ import { mockPerfumeData } from "../mock/mockData";
 import { termImages, defaultImages } from "../data/termImages";
 
 function Translate() {
+  const navigate = useNavigate();
   const [keyword, setKeyword] = useState("");
-  const [result, setResult] = useState(null);
+  const [results, setResults] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
 
-  const handleSearch = async () => {
+  useEffect(() => {
     const trimmedKeyword = keyword.trim();
 
-    if (!trimmedKeyword) {
-      setResult(null);
+    // 최소 두 글자 이상일 때만 검색 시작
+    if (trimmedKeyword.length < 2) {
+      setResults([]);
       setIsSearched(false);
       return;
     }
 
     setIsSearched(true);
 
-    try {
-      /*
-      const response = await fetch(
-        `백엔드주소?keyword=${trimmedKeyword}`
+    const foundData = mockPerfumeData.filter((item) => {
+      return (
+        item.term.toLowerCase().includes(trimmedKeyword.toLowerCase()) ||
+        item.english.toLowerCase().includes(trimmedKeyword.toLowerCase())
       );
+    });
 
-      const data = await response.json();
+    const mappedResults = foundData.map((item) => {
+      const hasSpecificImage = !!termImages[item.image];
+      
+      // 크게 보일 이미지 리스트
+      const largeImages = ["musk", "sandalwood", "vetiver", "patchouli", "tonkbean"];
+      const isLargeTarget = largeImages.includes(item.image);
+      
+      return {
+        ...item,
+        imageSrc:
+          termImages[item.image] ||
+          defaultImages[item.id % defaultImages.length],
+        isLarge: isLargeTarget || !hasSpecificImage // 지정된 5종 혹은 디폴트 이미지인 경우 true
+      };
+    });
 
-      setResult(data);
-      */
-
-      throw new Error();
-
-    } catch (error) {
-
-      const foundData = mockPerfumeData.find((item) => {
-
-        return (
-
-          item.term
-            .toLowerCase()
-            .includes(
-              trimmedKeyword.toLowerCase()
-            )
-
-          ||
-
-          item.english
-            .toLowerCase()
-            .includes(
-              trimmedKeyword.toLowerCase()
-            )
-        );
-      });
-
-      if (foundData) {
-
-        console.log(foundData);
-
-        console.log(
-          "mapped =",
-          termImages[
-            foundData.image
-          ]
-        );
-
-        setResult({
-
-          ...foundData,
-
-          imageSrc:
-
-            termImages[
-              foundData.image
-            ]
-
-            ||
-
-            defaultImages[
-              foundData.id %
-              defaultImages.length
-            ]
-        });
-
-      } else {
-
-        setResult(null);
-      }
-    }
-  };
+    setResults(mappedResults);
+  }, [keyword]);
 
   return (
     <div className="translate-page">
-
       <div className="translate-overlay">
-
         <div className="translate-header">
-
-          <button className="back-btn">
-
-            <img
-              src={backArrow}
-              alt="뒤로가기"
-            />
-
+          <button className="back-btn" onClick={() => navigate("/")}>
+            <img src={backArrow} alt="뒤로가기" />
           </button>
-
           <div className="header-text">
-
-            <h1>
-              향수어 번역기
-            </h1>
-
-            <p>
-              어려운 향수 용어를
-              일상적인 말로 바꿔드려요.
-            </p>
-
+            <h1>향수어 번역기</h1>
+            <p>어려운 향수 용어를 일상적인 말로 바꿔드려요.</p>
           </div>
-
         </div>
 
         <div className="search-box">
-
           <img
             src={searchIcon}
             alt="검색"
             className="search-icon-img"
           />
-
           <input
             type="text"
-
-            placeholder=
-              "궁금한 향수 용어를 입력해보세요."
-
+            placeholder="두 글자 이상 입력해보세요."
             value={keyword}
-
-            onChange={(e) =>
-              setKeyword(e.target.value)
-            }
-
-            onKeyDown={(e) => {
-
-              if (e.key === "Enter") {
-
-                handleSearch();
-              }
-            }}
+            onChange={(e) => setKeyword(e.target.value)}
           />
-
-          <button
-            className="search-btn"
-            onClick={handleSearch}
-          >
-
+          <button className="search-btn">
             <img
               src={sendIcon}
               alt="보내기"
               className="send-icon-img"
             />
-
           </button>
-
         </div>
 
-        {result && (
-
-          <>
-
-            <div className="category-title">
-
-              #
-              {" "}
-              {result.category}
-
-            </div>
-
-            <div className="result-card">
-
-              <div className="result-top">
-
-                <img
-                  src={result.imageSrc}
-                  alt={result.term}
-                  className="result-image"
-                />
-
-                <div className="result-content">
-
-                  <h2>
-
-                    {result.term}
-
-                    {" / "}
-
-                    {result.english}
-
-                  </h2>
-
-                  <p>
-                    {result.description}
-                  </p>
-
+        <div className="results-container">
+          {results.length > 0 ? (
+            results.map((item, index) => {
+              // 이전 항목과 카테고리가 다를 때만 헤더 출력
+              const showCategory = index === 0 || results[index - 1].category !== item.category;
+              
+              return (
+                <div key={item.id} className="result-wrapper">
+                  {showCategory && <div className="category-title"># {item.category}</div>}
+                  <div className="result-card">
+                    <div className="result-top">
+                      <img
+                        src={item.imageSrc}
+                        alt={item.term}
+                        className={`result-image ${item.isLarge ? "large" : ""}`}
+                      />
+                      <div className="result-content">
+                        <h2>
+                          {item.term} / {item.english}
+                        </h2>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
+              );
+            })
+          ) : (
+            isSearched && (
+              <div className="empty-card">
+                해당 용어가 검색되지 않습니다.
+                <br />
+                다른 단어로 검색해보세요!
               </div>
-
-            </div>
-
-          </>
-
-        )}
-
-        {
-
-          !result && isSearched && (
-
-            <div className="empty-card">
-
-              해당 용어가 검색되지 않습니다.
-
-              <br />
-
-              다른 단어로 검색해보세요!
-
-            </div>
-
-          )
-        }
-
+            )
+          )}
+        </div>
       </div>
-
     </div>
   );
 }

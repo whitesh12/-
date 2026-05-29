@@ -7,7 +7,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "우디",
     "english": "Woody",
-    "description": "나무, 숲, 흙 같은 차분하고 따뜻한 향"
+    "description": "나무, 숲, 흙 같은 차분하고 따뜻한 향",
+    "image": "woody"
   },
   {
     "id": 2,
@@ -16,7 +17,7 @@ export const mockPerfumeData =
     "term": "플로럴",
     "english": "Floral",
     "description": "꽃처럼 부드럽고 화사한 향",
-    "image": "floralImg"
+    "image": "floral"
   },
   {
     "id": 3,
@@ -25,7 +26,7 @@ export const mockPerfumeData =
     "term": "시트러스",
     "english": "Citrus",
     "description": "레몬, 오렌지, 자몽처럼 상큼하고 산뜻한 향",
-    "image": "citrusImg"
+    "image": "citrus"
   },
   {
     "id": 4,
@@ -41,7 +42,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "머스크",
     "english": "Musk",
-    "description": "깨끗한 살냄새나 포근한 섬유유연제 같은 향"
+    "description": "깨끗한 살냄새나 포근한 섬유유연제 같은 향",
+    "image": "musk"
   },
   {
     "id": 6,
@@ -50,7 +52,7 @@ export const mockPerfumeData =
     "term": "앰버",
     "english": "Amber",
     "description": "따뜻하고 포근하며 살짝 달콤한 향",
-    "image": "amberImg"
+    "image": "amber"
   },
   {
     "id": 7,
@@ -58,7 +60,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "파우더리",
     "english": "Powdery",
-    "description": "베이비파우더나 화장품처럼 보송한 향"
+    "description": "베이비파우더나 화장품처럼 보송한 향",
+    "image": "powdery"
   },
   {
     "id": 8,
@@ -67,7 +70,7 @@ export const mockPerfumeData =
     "term": "아쿠아틱",
     "english": "Aquatic",
     "description": "물, 바다, 비처럼 시원하고 맑은 향",
-    "image": "aquaticImg"
+    "image": "aquatic"
   },
   {
     "id": 9,
@@ -76,7 +79,7 @@ export const mockPerfumeData =
     "term": "그린",
     "english": "Green",
     "description": "풀잎, 줄기, 자연처럼 싱그러운 향",
-    "image": "greenImg"
+    "image": "green"
   },
   {
     "id": 10,
@@ -92,7 +95,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "스파이시",
     "english": "Spicy",
-    "description": "후추, 계피, 향신료처럼 자극적이고 따뜻한 향"
+    "description": "후추, 계피, 향신료처럼 자극적이고 따뜻한 향",
+    "image": "spicy"
   },
   {
     "id": 12,
@@ -172,7 +176,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "로즈",
     "english": "Rose",
-    "description": "장미처럼 우아하고 로맨틱한 향"
+    "description": "장미처럼 우아하고 로맨틱한 향",
+    "image": "rose"
   },
   {
     "id": 22,
@@ -181,7 +186,7 @@ export const mockPerfumeData =
     "term": "자스민",
     "english": "Jasmine",
     "description": "진하고 관능적인 흰 꽃 향",
-    "image": "jasmineImg"
+    "image": "jasmine"
   },
   {
     "id": 23,
@@ -189,7 +194,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "화이트 플로럴",
     "english": "White Floral",
-    "description": "자스민, 튜베로즈처럼 부드럽고 풍성한 흰 꽃 향"
+    "description": "자스민, 튜베로즈처럼 부드럽고 풍성한 흰 꽃 향",
+    "image": "whitefloral"
   },
   {
     "id": 24,
@@ -237,7 +243,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "네롤리",
     "english": "Neroli",
-    "description": "오렌지꽃에서 나는 깨끗하고 상쾌한 향"
+    "description": "오렌지꽃에서 나는 깨끗하고 상쾌한 향",
+    "image": "neroli"
   },
   {
     "id": 30,
@@ -294,7 +301,7 @@ export const mockPerfumeData =
     "term": "베르가못",
     "english": "Bergamot",
     "description": "레몬보다 부드럽고 세련된 상큼함",
-    "image": "bergamotImg"
+    "image": "bergamot"
   },
   {
     "id": 37,
@@ -303,7 +310,7 @@ export const mockPerfumeData =
     "term": "레몬",
     "english": "Lemon",
     "description": "톡 쏘는 밝은 상큼함",
-    "image": "lemonImg"
+    "image": "lemon"
   },
   {
     "id": 38,
@@ -328,7 +335,7 @@ export const mockPerfumeData =
     "term": "자몽",
     "english": "Grapefruit",
     "description": "씁쓸함이 살짝 섞인 산뜻한 향",
-    "image": "grapefruitImg"
+    "image": "grapefruit"
   },
   {
     "id": 41,
@@ -336,7 +343,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "유자",
     "english": "Yuzu",
-    "description": "동양적인 느낌의 상쾌한 시트러스 향"
+    "description": "동양적인 느낌의 상쾌한 시트러스 향",
+    "image": "yuza"
   },
   {
     "id": 42,
@@ -416,7 +424,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "샌들우드",
     "english": "Sandalwood",
-    "description": "부드럽고 크리미한 나무 향"
+    "description": "부드럽고 크리미한 나무 향",
+    "image": "sandalwood"
   },
   {
     "id": 52,
@@ -425,7 +434,7 @@ export const mockPerfumeData =
     "term": "시더우드",
     "english": "Cedarwood",
     "description": "연필나무처럼 마른 나무 향",
-    "image": "cedarwoodImg"
+    "image": "cedarwood"
   },
   {
     "id": 53,
@@ -433,7 +442,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "베티버",
     "english": "Vetiver",
-    "description": "흙, 풀, 나무가 섞인 듯한 차분한 향"
+    "description": "흙, 풀, 나무가 섞인 듯한 차분한 향",
+    "image": "vetiver"
   },
   {
     "id": 54,
@@ -441,7 +451,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "패출리",
     "english": "Patchouli",
-    "description": "흙냄새와 진한 허브 느낌이 섞인 향"
+    "description": "흙냄새와 진한 허브 느낌이 섞인 향",
+    "image": "patchouli"
   },
   {
     "id": 55,
@@ -489,7 +500,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "바닐라",
     "english": "Vanilla",
-    "description": "달콤하고 부드러운 디저트 향"
+    "description": "달콤하고 부드러운 디저트 향",
+    "image": "vanilla"
   },
   {
     "id": 61,
@@ -497,7 +509,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "통카빈",
     "english": "Tonka Bean",
-    "description": "바닐라보다 살짝 고소하고 따뜻한 단 향"
+    "description": "바닐라보다 살짝 고소하고 따뜻한 단 향",
+    "image": "tonkbean"
   },
   {
     "id": 62,
@@ -569,7 +582,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "소피",
     "english": "Soapy",
-    "description": "비누처럼 깨끗하고 말끔한 향"
+    "description": "비누처럼 깨끗하고 말끔한 향",
+    "image": "soapy"
   },
   {
     "id": 71,
@@ -578,7 +592,7 @@ export const mockPerfumeData =
     "term": "클린",
     "english": "Clean",
     "description": "막 씻고 나온 듯 깔끔한 향",
-    "image": "cleanImg"
+    "image": "clean"
   },
   {
     "id": 72,
@@ -770,7 +784,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "탑 노트",
     "english": "Top Note",
-    "description": "향수를 뿌렸을 때 가장 먼저 느껴지는 향"
+    "description": "향수를 뿌렸을 때 가장 먼저 느껴지는 향",
+    "image": "topnote"
   },
   {
     "id": 96,
@@ -778,7 +793,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "미들 노트",
     "english": "Middle Note",
-    "description": "첫 향이 지나간 뒤 중심이 되는 향"
+    "description": "첫 향이 지나간 뒤 중심이 되는 향",
+    "image": "middlenote"
   },
   {
     "id": 97,
@@ -795,7 +811,7 @@ export const mockPerfumeData =
     "term": "베이스 노트",
     "english": "Base Note",
     "description": "마지막까지 오래 남는 잔향",
-    "image": "basenoteImg"
+    "image": "basenote"
   },
   {
     "id": 99,
@@ -812,7 +828,7 @@ export const mockPerfumeData =
     "term": "향조",
     "english": "Accord",
     "description": "여러 향이 어우러져 만들어진 전체적인 분위기",
-    "image": "accordImg"
+    "image": "accord"
   },
   {
     "id": 101,
@@ -829,7 +845,7 @@ export const mockPerfumeData =
     "term": "잔향",
     "english": "Dry Down",
     "description": "시간이 지나며 피부에 남는 마지막 향",
-    "image": "drydownImg"
+    "image": "drydown"
   },
   {
     "id": 103,
@@ -862,7 +878,7 @@ export const mockPerfumeData =
     "term": "지속력",
     "english": "Longevity",
     "description": "향이 얼마나 오래 남는지",
-    "image": "longevityImg"
+    "image": "longevity"
   },
   {
     "id": 107,
@@ -870,7 +886,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "발향력",
     "english": "Projection",
-    "description": "향이 주변으로 얼마나 퍼지는지"
+    "description": "향이 주변으로 얼마나 퍼지는지",
+    "image": "projection"
   },
   {
     "id": 108,
@@ -886,7 +903,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "실라지",
     "english": "Sillage",
-    "description": "향이 공기 중에 남기는 흔적, 잔향의 퍼짐"
+    "description": "향이 공기 중에 남기는 흔적, 잔향의 퍼짐",
+    "image": "sillage"
   },
   {
     "id": 110,
@@ -919,7 +937,7 @@ export const mockPerfumeData =
     "term": "오 드 퍼퓸",
     "english": "Eau de Parfum (EDP)",
     "description": "향이 비교적 진하고 오래가는 타입",
-    "image": "edpImg"
+    "image": "edp"
   },
   {
     "id": 114,
@@ -928,7 +946,7 @@ export const mockPerfumeData =
     "term": "오 드 뚜왈렛",
     "english": "Eau de Toilette (EDT)",
     "description": "가볍고 데일리하게 쓰기 좋은 타입",
-    "image": "edtImg"
+    "image": "edt"
   },
   {
     "id": 115,
@@ -944,7 +962,8 @@ export const mockPerfumeData =
     "priority": "필수",
     "term": "퍼퓸",
     "english": "Parfum",
-    "description": "농도가 높고 가장 진한 편인 타입"
+    "description": "농도가 높고 가장 진한 편인 타입",
+    "image": "parfum"
   },
   {
     "id": 117,
