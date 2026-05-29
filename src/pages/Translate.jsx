@@ -1,54 +1,32 @@
 import { useState } from "react";
-
 import "../styles/translate.css";
 
+// 아이콘 및 에셋 import
 import backArrow from "../assets/back-arrow.png";
-
 import searchIcon from "../assets/search.svg";
-
 import sendIcon from "../assets/send.svg";
 
-// mock 데이터 import
-import { mockPerfumeData }
-from "../mock/mockData";
+// 목데이터 및 이미지 맵핑 파일 import
+import { mockPerfumeData } from "../mock/mockData";
+import { termImages, defaultImages } from "../data/termImages";
 
 function Translate() {
-
-  // 검색어 저장
   const [keyword, setKeyword] = useState("");
-
-  // 결과 저장
   const [result, setResult] = useState(null);
+  const [isSearched, setIsSearched] = useState(false);
 
-  // 검색 여부
-  const [isSearched, setIsSearched] =
-    useState(false);
-
-  // 검색 버튼 클릭
   const handleSearch = async () => {
+    const trimmedKeyword = keyword.trim();
 
-    // 공백 제거
-    const trimmedKeyword =
-      keyword.trim();
-
-    // 빈값 검색 방지
     if (!trimmedKeyword) {
-
       setResult(null);
-
       setIsSearched(false);
-
       return;
     }
 
     setIsSearched(true);
 
     try {
-
-      // -------------------
-      // 백엔드 연결 시 사용
-      // -------------------
-
       /*
       const response = await fetch(
         `백엔드주소?keyword=${trimmedKeyword}`
@@ -59,56 +37,70 @@ function Translate() {
       setResult(data);
       */
 
-      // 임시로 강제 에러 발생
       throw new Error();
 
     } catch (error) {
 
-      // -------------------
-      // mock 데이터 검색
-      // -------------------
+      const foundData = mockPerfumeData.find((item) => {
 
-      const foundData =
-        mockPerfumeData.find((item) => {
+        return (
 
-          return (
+          item.term
+            .toLowerCase()
+            .includes(
+              trimmedKeyword.toLowerCase()
+            )
 
-            item.term
-              .toLowerCase()
-              .includes(
-                trimmedKeyword.toLowerCase()
-              )
+          ||
+
+          item.english
+            .toLowerCase()
+            .includes(
+              trimmedKeyword.toLowerCase()
+            )
+        );
+      });
+
+      if (foundData) {
+
+        console.log(foundData);
+
+        console.log(
+          "mapped =",
+          termImages[
+            foundData.image
+          ]
+        );
+
+        setResult({
+
+          ...foundData,
+
+          imageSrc:
+
+            termImages[
+              foundData.image
+            ]
 
             ||
 
-            item.english
-              .toLowerCase()
-              .includes(
-                trimmedKeyword.toLowerCase()
-              )
-          );
+            defaultImages[
+              foundData.id %
+              defaultImages.length
+            ]
         });
-
-      // 검색 성공
-      if (foundData) {
-
-        setResult(foundData);
 
       } else {
 
-        // 검색 실패
         setResult(null);
       }
     }
   };
 
   return (
-
     <div className="translate-page">
 
       <div className="translate-overlay">
-
-        {/* 상단 */}
 
         <div className="translate-header">
 
@@ -136,19 +128,13 @@ function Translate() {
 
         </div>
 
-        {/* 검색창 */}
-
         <div className="search-box">
-
-          {/* 검색 아이콘 */}
 
           <img
             src={searchIcon}
             alt="검색"
             className="search-icon-img"
           />
-
-          {/* input */}
 
           <input
             type="text"
@@ -162,7 +148,6 @@ function Translate() {
               setKeyword(e.target.value)
             }
 
-            // 엔터 검색
             onKeyDown={(e) => {
 
               if (e.key === "Enter") {
@@ -172,11 +157,8 @@ function Translate() {
             }}
           />
 
-          {/* 전송 버튼 */}
-
           <button
             className="search-btn"
-
             onClick={handleSearch}
           >
 
@@ -190,50 +172,56 @@ function Translate() {
 
         </div>
 
-        {/* 검색 성공 */}
+        {result && (
 
-        {
-          result && (
+          <>
 
-            <>
+            <div className="category-title">
 
-              {/* 카테고리 */}
+              #
+              {" "}
+              {result.category}
 
-              <div className="category-title">
+            </div>
 
-                #
-                {" "}
-                {result.category}
+            <div className="result-card">
+
+              <div className="result-top">
+
+                <img
+                  src={result.imageSrc}
+                  alt={result.term}
+                  className="result-image"
+                />
+
+                <div className="result-content">
+
+                  <h2>
+
+                    {result.term}
+
+                    {" / "}
+
+                    {result.english}
+
+                  </h2>
+
+                  <p>
+                    {result.description}
+                  </p>
+
+                </div>
 
               </div>
 
-              {/* 결과 카드 */}
+            </div>
 
-              <div className="result-card">
+          </>
 
-                <h2>
-
-                  {result.term}
-
-                  {" / "}
-
-                  {result.english}
-
-                </h2>
-
-                <p>
-                  {result.description}
-                </p>
-
-              </div>
-
-            </>
-          )
-        }
-
-        {/* 검색 실패 */}
+        )}
 
         {
+
           !result && isSearched && (
 
             <div className="empty-card">
@@ -245,6 +233,7 @@ function Translate() {
               다른 단어로 검색해보세요!
 
             </div>
+
           )
         }
 

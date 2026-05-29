@@ -67,7 +67,7 @@ export const mockPerfumeData =
     "term": "아쿠아틱",
     "english": "Aquatic",
     "description": "물, 바다, 비처럼 시원하고 맑은 향",
-    "image": aquaticImg
+    "image": "aquaticImg"
   },
   {
     "id": 9,
