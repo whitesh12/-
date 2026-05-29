@@ -275,3 +275,19 @@ body {
   pointer-events: none;
 }
 
+.orbit-image {
+  position: absolute;
+
+  bottom: -150px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 430px;
+
+  opacity: 0.9;
+
+  z-index: 1;
+
+  pointer-events: none;
+}

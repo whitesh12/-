@@ -2,7 +2,7 @@ import "../styles/home.css";
 
 import background from "../assets/background.png";
 import logo from "../assets/logo.png";
-
+import orbitImage from "../assets/orbit.svg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -52,6 +52,11 @@ function Home() {
           <br />
           한 번의 간편한 테스트로 향수를 추천받아요.
         </div>
+        <img
+          src={orbitImage}
+          alt="orbit"
+          className="orbit-image"
+        />
       </div>
     </div>
   );

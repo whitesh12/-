@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+.preference-page {
+
+  width: 393px;
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  background: #10101A;
+
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+.preference-top-bg {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 228px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16,16,26,0) 0%,
+      #10101A 100%
+    ),
+    url("../assets/test-bg.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  /*background-repeat: no-repeat;*/
+
+  z-index: 0;
+}
+
+.preference-overlay {
+
+  /*background: #10101A; */
+
+  border-top-left-radius: 24px;
+
+  border-top-right-radius: 24px;
+
+  position: relative;
+
+  z-index: 10;
+
+  padding:
+    24px 20px 50px;
+
+  box-sizing: border-box;
+}
+
+.preference-header {
+
+  position: relative;
+
+  text-align: center;
+
+  padding-top: 40px;
+}
+
+.preference-back-btn {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #CEDBFF;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.preference-back-btn img {
+    width: 16px;
+}
+
+.preference-header h1 {
+
+  margin: 0;
+
+  color: #FFF;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+
+  font-size: 34px;
+
+  font-weight: 400;
+}
+
+.preference-header p {
+
+  margin-top: 12px;
+
+  color:
+    rgba(255,255,255,0.7);
+
+  font-size: 13px;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+}
+
+/* 섹션 */
+
+.preference-section-title {
+
+  display: inline-block;
+
+  margin-top: 36px;
+  margin-bottom: 18px;
+
+  padding:
+    8px 14px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: #CCB933;
+
+  font-size: 12px;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+}
+
+/* 슬라이더 */
+
+.preference-slider-group {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 26px;
+}
+
+.preference-slider-item {
+
+  color: white;
+}
+
+.preference-slider-item span {
+
+  font-size: 15px;
+}
+
+.preference-slider-item input {
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  accent-color: #E1C623;
+}
+
+.preference-slider-labels {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  color: white;
+
+  font-size: 13px;
+}
+
+/* 버튼 그리드 */
+
+.preference-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+/* 선택 카드 */
+
+.preference-option-btn {
+
+  min-height: 72px;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(210,220,255,0.35);
+
+  background: rgba(255,255,255,0.04);
+
+  text-align: left;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.preference-option-btn.selected {
+
+  border: 1.5px solid #D7BF3A;
+
+  box-shadow:
+    0 0 12px rgba(215,191,58,0.25);
+}
+
+.preference-option-title {
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #FFF;
+
+  margin-bottom: 4px;
+}
+
+.preference-option-desc {
+
+  font-size: 11px;
+
+  color: rgba(255,255,255,0.55);
+
+  line-height: 1.3;
+}
+
+/* 하단 버튼 */
+
+.preference-submit-btn {
+
+  width: 100%;
+
+  height: 56px;
+
+  margin-top: 42px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #CCB933;
+
+  color: #111;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.preference-submit-btn:hover {
+
+  transform: scale(1.02);
+}
+
+.preference-submit-btn:active {
+
+  transform: scale(0.98);
+
+  box-shadow:
+     0 0 18px rgba(212,191,45,0.55),
+     0 0 35px rgba(212,191,45,0.30);
+}
