@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Loading from "./pages/Loading";
 import Translate from "./pages/Translate";
 import PreferenceTest from "./pages/PreferenceTest";
+import ResultLoading from "./pages/ResultLoading";
 
 function App() {
   return (
@@ -11,11 +12,13 @@ function App() {
 
       <Route path="/" element={<Home />} />
 
-      <Route path="/loading" element={<Loading />} />
+      <Route path="/test-loading" element={<Loading />} />
 
       <Route path="/translate" element={<Translate />} />
 
       <Route path="/preference-test" element={<PreferenceTest />}/>
+
+      <Route path="/result-loading" element={<ResultLoading />} />
 
     </Routes>
   );

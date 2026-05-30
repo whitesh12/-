@@ -35,7 +35,7 @@ function Home() {
 
         <button 
         className="gold-btn"
-        onClick={() => navigate("/loading")}
+        onClick={() => navigate("/test-loading")}
         >
           ✦ 향 취향 찾기
         </button>

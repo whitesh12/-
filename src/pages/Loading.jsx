@@ -16,7 +16,7 @@ function Loading() {
 
       navigate("/preference-test");
 
-    }, 2500);
+    }, 1500);
 
     return () => clearTimeout(timer);
 

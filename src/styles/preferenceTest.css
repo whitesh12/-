@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700&family=Gowun+Dodum&display=swap');
 
 .preference-page {
 
@@ -40,6 +40,27 @@
   /*background-repeat: no-repeat;*/
 
   z-index: 0;
+}
+
+.preference-bottom-bg {
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 260px;
+
+  background:
+    #8D8D8D
+    url("../assets/test-bg2.png")
+    center bottom / cover
+    no-repeat;
+
+  z-index: 0;
+
+  pointer-events: none;
 }
 
 .preference-overlay {
@@ -108,19 +129,19 @@
     "Gowun Dodum",
     sans-serif;
 
-  font-size: 34px;
+  font-size: 30px;
 
   font-weight: 400;
 }
 
 .preference-header p {
 
-  margin-top: 12px;
+  margin-top: 14px;
 
   color:
     rgba(255,255,255,0.7);
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-family:
     "Gowun Dodum",
@@ -144,13 +165,19 @@
   background:
     rgba(255,255,255,0.08);
 
-  color: #CCB933;
-
-  font-size: 12px;
+  color: #FFDE00;
 
   font-family:
-    "Gowun Dodum",
+    "Gothic A1",
     sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 300;
+
+  line-height: normal;
 }
 
 /* 슬라이더 */
@@ -160,7 +187,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 26px;
+  gap: 28px;
 }
 
 .preference-slider-item {
@@ -168,18 +195,129 @@
   color: white;
 }
 
-.preference-slider-item span {
+.preference-slider-number {
+
+  display: block;
 
   font-size: 15px;
+
+  line-height: 1;
 }
 
 .preference-slider-item input {
 
+  appearance: none;
+
+  -webkit-appearance: none;
+
   width: 100%;
 
-  margin-top: 12px;
+  height: 30px;
 
-  accent-color: #E1C623;
+  margin: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.preference-slider-control {
+
+  position: relative;
+
+  margin-top: 7px;
+
+  padding-top: 12px;
+}
+
+.preference-slider-percent {
+
+  position: absolute;
+
+  top: -2px;
+
+  transform: translateX(-50%);
+
+  color: #FFFEFE;
+
+  font-family:
+    "Gothic A1",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.preference-slider-item input::-webkit-slider-runnable-track {
+
+  width: 100%;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #CEDBFF;
+}
+
+.preference-slider-item input::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+
+  width: 30px;
+
+  height: 30px;
+
+  margin-top: -13px;
+
+  border: 2px solid #FFFEFE;
+
+  border-radius: 50%;
+
+  background: #FD0;
+
+  box-sizing: border-box;
+}
+
+.preference-slider-item input::-moz-range-track {
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #CEDBFF;
+}
+
+.preference-slider-item input::-moz-range-progress {
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #CEDBFF;
+}
+
+.preference-slider-item input::-moz-range-thumb {
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 2px solid #FFFEFE;
+
+  border-radius: 50%;
+
+  background: #FD0;
+
+  box-sizing: border-box;
 }
 
 .preference-slider-labels {
@@ -192,7 +330,7 @@
 
   color: white;
 
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* 버튼 그리드 */
@@ -202,18 +340,26 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
   gap: 12px;
+
+  justify-items: stretch;
 }
 
 /* 선택 카드 */
 
 .preference-option-btn {
 
+  width: 100%;
+
+  min-width: 0;
+
   min-height: 72px;
 
   padding: 12px 14px;
+
+  box-sizing: border-box;
 
   border-radius: 14px;
 
@@ -224,6 +370,8 @@
   text-align: left;
 
   color: white;
+
+  font-size: 14px;
 
   cursor: pointer;
 
@@ -236,6 +384,142 @@
   justify-content: center;
 }
 
+.preference-preferred-grid .preference-option-btn {
+
+  min-height: 64px;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(206, 219, 255, 0.50);
+
+  background: rgba(255, 251, 251, 0.08);
+
+  align-items: flex-start;
+
+  gap: 4px;
+}
+
+.preference-disliked-grid .preference-option-btn {
+
+  height: 48px;
+
+  min-height: 48px;
+
+  padding: 15px 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(206, 219, 255, 0.50);
+
+  background: rgba(217, 217, 217, 0.08);
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #FFF;
+
+  font-family:
+    "Gothic A1",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  line-height: normal;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.preference-disliked-grid .preference-option-btn:disabled {
+
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+.preference-occasion-grid {
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.preference-occasion-grid .preference-option-btn {
+
+  height: 72px;
+
+  min-height: 72px;
+
+  padding: 6px 8px 9px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(206, 219, 255, 0.50);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: center;
+}
+
+.preference-occasion-icon {
+
+  width: 30px;
+
+  height: 30px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.preference-occasion-label {
+
+  color: #FFF;
+
+  font-family:
+    "Gothic A1",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  line-height: normal;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
 .preference-option-btn.selected {
 
   border: 1.5px solid #D7BF3A;
@@ -246,22 +530,62 @@
 
 .preference-option-title {
 
-  font-size: 15px;
-
-  font-weight: 700;
-
   color: #FFF;
 
+  font-family:
+    "Gothic A1",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  line-height: normal;
+
   margin-bottom: 4px;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 .preference-option-desc {
 
+  color: #FFF;
+
+  font-family:
+    "Gothic A1",
+    sans-serif;
+
   font-size: 11px;
 
-  color: rgba(255,255,255,0.55);
+  font-style: normal;
 
-  line-height: 1.3;
+  font-weight: 400;
+
+  line-height: normal;
+
+  opacity: 0.6;
+
+  width: max-content;
+
+  max-width: none;
+
+  overflow: visible;
+
+  text-overflow: clip;
+
+  white-space: nowrap;
+
+  transform: scaleX(0.86);
+
+  transform-origin: left center;
 }
 
 /* 하단 버튼 */
@@ -280,15 +604,19 @@
 
   background: #CCB933;
 
-  color: #111;
+  color: rgba(15, 5, 56, 0.89);
 
   font-family:
-    "Gowun Dodum",
+    "Gothic A1",
     sans-serif;
 
   font-size: 16px;
 
+  font-style: normal;
+
   font-weight: 700;
+
+  line-height: normal;
 
   cursor: pointer;
 
@@ -307,4 +635,15 @@
   box-shadow:
      0 0 18px rgba(212,191,45,0.55),
      0 0 35px rgba(212,191,45,0.30);
+}
+
+.preference-submit-btn:disabled {
+
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
 }
