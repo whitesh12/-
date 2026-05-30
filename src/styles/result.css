@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700&family=Inter:wght@400;500;700&display=swap');
+
+.result-page {
+
+  width: 393px;
+  min-height: 852px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #10101A;
+}
+
+.result-bg-top,
+.result-bg-bottom {
+
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16, 16, 26, 0.00) 0%,
+      #10101A 100%
+    ),
+    url("../assets/test-bg2.png")
+    lightgray 50% / cover
+    no-repeat;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.result-bg-top {
+
+  top: 0;
+
+  height: 248px;
+}
+
+.result-bg-bottom {
+
+  bottom: 0;
+
+  height: 210px;
+}
+
+.result-page-content {
+
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 852px;
+
+  padding: 110px 26px 36px;
+
+  box-sizing: border-box;
+}
+
+.result-top-buttons {
+
+  position: absolute;
+
+  top: 82px;
+  left: 26px;
+  right: 26px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.result-icon-btn {
+
+  border: none;
+
+  border-radius: 55px;
+
+  background: #CEDBFF;
+
+  display: inline-flex;
+
+  padding: 10px;
+
+  gap: 10px;
+
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.result-icon-btn:last-child {
+
+  border-radius: 43px;
+}
+
+.result-icon-btn img {
+
+  width: 20px;
+  height: 20px;
+
+  object-fit: contain;
+}
+
+.result-title {
+
+  margin: 86px 0 40px;
+
+  color: #FFF;
+
+  text-align: center;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+
+  font-size: 25px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+}
+
+.result-perfume-card {
+
+  min-height: 510px;
+
+  padding: 88px 24px 66px;
+
+  box-sizing: border-box;
+
+  border-radius: 20px;
+
+  border: 1.5px solid #FFDE00;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  color: #FFF;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.result-brand {
+
+  margin: 0;
+
+  color: #FFF;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+}
+
+.result-perfume-card h2 {
+
+  margin: 38px 0 0;
+
+  color: #FFF;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 24px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 1.24;
+
+  white-space: pre-line;
+}
+
+.result-summary {
+
+  width: 100%;
+
+  margin: 34px 0 0;
+
+  color: #FD0;
+
+  text-align: center;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  line-height: normal;
+
+  word-break: keep-all;
+
+  white-space: normal;
+}
+
+.result-description {
+
+  width: 100%;
+
+  margin: 32px 0 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  word-break: keep-all;
+
+  white-space: normal;
+}
+
+.result-reason {
+
+  width: 100%;
+
+  margin: 30px auto 0;
+
+  padding: 16px 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(206, 219, 255, 0.15);
+
+  background: rgba(0, 0, 0, 0.30);
+
+  color: #FFE49E;
+
+  text-align: center;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: normal;
+
+  box-sizing: border-box;
+
+  word-break: keep-all;
+
+  white-space: normal;
+}
+
+.result-tags {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 42px;
+}
+
+.result-tags span {
+
+  width: 86px;
+  min-height: 54px;
+
+  padding: 11px 7px;
+
+  box-sizing: border-box;
+
+  border-radius: 6px;
+
+  border: 1px solid rgba(206, 219, 255, 0.80);
+
+  color: #FFF;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  word-break: keep-all;
+
+  white-space: normal;
+}
+
+.result-retry-btn {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  font-family:
+    "Gowun Dodum",
+    sans-serif;
+
+  font-style: normal;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.result-retry-btn {
+
+  width: 326px;
+  height: 50px;
+
+  margin-top: 66px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0 20px;
+
+  border-radius: 12px;
+
+  background: #CCB933;
+
+  color: #241D4E;
+}

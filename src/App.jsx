@@ -5,6 +5,7 @@ import Loading from "./pages/Loading";
 import Translate from "./pages/Translate";
 import PreferenceTest from "./pages/PreferenceTest";
 import ResultLoading from "./pages/ResultLoading";
+import Result from "./pages/Result";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Route path="/preference-test" element={<PreferenceTest />}/>
 
       <Route path="/result-loading" element={<ResultLoading />} />
+
+      <Route path="/result" element={<Result />} />
 
     </Routes>
   );
