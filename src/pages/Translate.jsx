@@ -121,7 +121,9 @@ function Translate() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchError, setSearchError] = useState("");
+  const [searchRequestKey, setSearchRequestKey] = useState(0);
 
   useEffect(() => {
     const trimmedKeyword = keyword.trim();
@@ -130,11 +132,13 @@ function Translate() {
     if (trimmedKeyword.length < 2) {
       setResults([]);
       setIsSearched(false);
+      setIsLoading(false);
       setSearchError("");
       return;
     }
 
     setIsSearched(true);
+    setIsLoading(true);
     setSearchError("");
 
     const controller = new AbortController();
@@ -167,13 +171,31 @@ function Translate() {
           setResults([]);
           setSearchError("검색 연결에 문제가 있어요. 잠시 후 다시 시도해주세요.");
         }
+      } finally {
+        if (!controller.signal.aborted) {
+          setIsLoading(false);
+        }
       }
     };
 
     loadResults();
 
     return () => controller.abort();
-  }, [keyword]);
+  }, [keyword, searchRequestKey]);
+
+  const handleSearchSubmit = () => {
+    const trimmedKeyword = keyword.trim();
+
+    if (trimmedKeyword.length < 2) {
+      setResults([]);
+      setIsSearched(false);
+      setIsLoading(false);
+      setSearchError("두 글자 이상 입력해주세요.");
+      return;
+    }
+
+    setSearchRequestKey((currentKey) => currentKey + 1);
+  };
 
   return (
     <div className="translate-page">
@@ -199,8 +221,17 @@ function Translate() {
             placeholder="두 글자 이상 입력해보세요."
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearchSubmit();
+              }
+            }}
           />
-          <button className="search-btn">
+          <button
+            className="search-btn"
+            type="button"
+            onClick={handleSearchSubmit}
+          >
             <img
               src={sendIcon}
               alt="보내기"
@@ -210,7 +241,11 @@ function Translate() {
         </div>
 
         <div className="results-container">
-          {results.length > 0 ? (
+          {isLoading ? (
+            <div className="empty-card">
+              검색 중...
+            </div>
+          ) : results.length > 0 ? (
             results.map((item, index) => {
               // 이전 항목과 카테고리가 다를 때만 헤더 출력
               const showCategory = index === 0 || results[index - 1].category !== item.category;

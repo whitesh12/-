@@ -105,6 +105,10 @@ function normalizeRecommendation(data) {
 
 export async function fetchRecommendation(preferenceData) {
 
+  if (!preferenceData) {
+    throw new Error("Preference data is missing");
+  }
+
   const response = await fetch(RECOMMEND_API_URL, {
     method: "POST",
     headers: {
@@ -114,7 +118,12 @@ export async function fetchRecommendation(preferenceData) {
   });
 
   if (!response.ok) {
-    throw new Error("Recommendation request failed");
+
+    const errorBody = await response.text();
+
+    throw new Error(
+      `Recommendation request failed: ${response.status} ${errorBody}`
+    );
   }
 
   const data = await response.json();

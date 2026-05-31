@@ -22,6 +22,11 @@ function ResultLoading() {
 
     const loadRecommendation = async () => {
 
+      if (!location.state) {
+        setErrorMessage("테스트 정보를 다시 선택해주세요.");
+        return;
+      }
+
       try {
 
         const recommendation = await fetchRecommendation(location.state);
@@ -29,7 +34,6 @@ function ResultLoading() {
         if (!isMounted) {
           return;
         }
-
         navigate("/result", {
           replace: true,
           state: {
@@ -44,6 +48,7 @@ function ResultLoading() {
 
         if (isMounted) {
           setErrorMessage("추천 결과를 불러오지 못했어요. 잠시 후 다시 시도해주세요.");
+          return;
         }
       }
     };
