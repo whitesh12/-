@@ -17,7 +17,10 @@ export async function searchScentTerms(keyword, signal) {
     signal
   });
 
-  if (response.status === 404) {
+  if (
+    response.status === 400 ||
+    response.status === 404
+  ) {
     return [];
   }
 

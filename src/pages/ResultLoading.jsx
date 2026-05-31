@@ -8,6 +8,9 @@ import { fetchRecommendation } from "../api/recommendation";
 
 import "../styles/resultLoading.css";
 
+const recommendationCache = new Map();
+const recommendationRequests = new Map();
+
 function ResultLoading() {
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -22,22 +25,50 @@ function ResultLoading() {
 
     const loadRecommendation = async () => {
 
-      if (!location.state) {
+      const preferenceData = location.state;
+
+      if (!preferenceData) {
         setErrorMessage("테스트 정보를 다시 선택해주세요.");
+        return;
+      }
+
+      const requestKey = preferenceData.requestId ||
+        JSON.stringify(preferenceData);
+      const cachedRecommendation =
+        recommendationCache.get(requestKey);
+
+      if (cachedRecommendation) {
+        navigate("/result", {
+          replace: true,
+          state: {
+            preferenceData,
+            recommendation: cachedRecommendation
+          }
+        });
         return;
       }
 
       try {
 
-        const recommendation = await fetchRecommendation(location.state);
+        const request =
+          recommendationRequests.get(requestKey) ||
+          fetchRecommendation(preferenceData);
+
+        recommendationRequests.set(requestKey, request);
+
+        const recommendation = await request;
 
         if (!isMounted) {
           return;
         }
+
+        recommendationCache.set(requestKey, recommendation);
+        recommendationRequests.delete(requestKey);
+
         navigate("/result", {
           replace: true,
           state: {
-            preferenceData: location.state,
+            preferenceData,
             recommendation
           }
         });
@@ -54,6 +85,8 @@ function ResultLoading() {
           );
           return;
         }
+
+        recommendationRequests.delete(requestKey);
       }
     };
 

@@ -2,9 +2,9 @@
 
 .preference-page {
 
-  width: 393px;
+  width: min(393px, 100vw);
 
-  min-height: 100vh;
+  min-height: max(852px, 100svh);
 
   margin: 0 auto;
 
@@ -76,7 +76,7 @@
   z-index: 10;
 
   padding:
-    24px 20px 50px;
+    24px clamp(16px, 5.09vw, 20px) 50px;
 
   box-sizing: border-box;
 }
@@ -456,7 +456,7 @@
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 24px;
+  gap: clamp(14px, 6.1vw, 24px);
 }
 
 .preference-occasion-grid .preference-option-btn {

@@ -6,6 +6,23 @@ import { DEFAULT_RECOMMENDATION } from "../api/recommendation";
 import goTranslate from "../assets/go_translate.png";
 import homeIcon from "../assets/home.png";
 
+const tagSearchAliases = {
+  aldehyde: "Aldehydic",
+  aldehydes: "Aldehydic"
+};
+
+function getTagSearchKeyword(tag) {
+
+  const keyword = String(tag || "")
+    .replace(/^#?(Top|Middle|Base)\s*:\s*/i, "")
+    .split("/")
+    .map((value) => value.trim())
+    .filter(Boolean)[0] || "";
+
+  return tagSearchAliases[keyword.toLowerCase()] ||
+    keyword;
+}
+
 function Result() {
 
   const navigate = useNavigate();
@@ -53,7 +70,17 @@ function Result() {
 
           <button
             className="result-icon-btn"
-            onClick={() => navigate("/translate")}
+            onClick={() => navigate(
+              "/translate",
+              {
+                state: {
+                  fromResult: true,
+                  resultState: location.state || {
+                    recommendation
+                  }
+                }
+              }
+            )}
             aria-label="향수어 번역기로 이동"
           >
             <img
@@ -93,12 +120,34 @@ function Result() {
           <div className="result-tags">
 
             {
-              tags.map((tag) => (
+              tags.map((tag) => {
 
-                <span key={tag}>
+                const searchKeyword =
+                  getTagSearchKeyword(tag);
+
+                return (
+
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => navigate(
+                    "/translate",
+                    {
+                      state: {
+                        keyword: searchKeyword,
+                        fromResult: true,
+                        resultState: location.state || {
+                          recommendation
+                        }
+                      }
+                    }
+                  )}
+                  disabled={!searchKeyword}
+                >
                   {tag}
-                </span>
-              ))
+                </button>
+                );
+              })
             }
 
           </div>

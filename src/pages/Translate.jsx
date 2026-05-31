@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/translate.css";
 
 // 아이콘 및 에셋 import
@@ -118,7 +118,11 @@ function findImageKey(item) {
 
 function Translate() {
   const navigate = useNavigate();
-  const [keyword, setKeyword] = useState("");
+  const location = useLocation();
+  const translateState = location.state || {};
+  const [keyword, setKeyword] = useState(
+    translateState.keyword || ""
+  );
   const [results, setResults] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -197,11 +201,27 @@ function Translate() {
     setSearchRequestKey((currentKey) => currentKey + 1);
   };
 
+  const handleBackClick = () => {
+
+    if (
+      translateState.fromResult &&
+      translateState.resultState
+    ) {
+      navigate("/result", {
+        replace: true,
+        state: translateState.resultState
+      });
+      return;
+    }
+
+    navigate("/");
+  };
+
   return (
     <div className="translate-page">
       <div className="translate-overlay">
         <div className="translate-header">
-          <button className="back-btn" onClick={() => navigate("/")}>
+          <button className="back-btn" onClick={handleBackClick}>
             <img src={backArrow} alt="뒤로가기" />
           </button>
           <div className="header-text">

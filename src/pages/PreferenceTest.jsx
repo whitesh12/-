@@ -225,6 +225,10 @@ function PreferenceTest() {
 
     const requestData = {
 
+      requestId: `recommend-${Date.now()}-${Math.random()
+        .toString(36)
+        .slice(2)}`,
+
       sliderValues,
 
       preferredScents,

@@ -9,8 +9,8 @@ body {
 }
 
 .home {
-  width: 393px;
-  height: 852px;
+  width: min(393px, 100vw);
+  height: min(852px, 100svh);
 
   position: relative;
 
@@ -44,6 +44,7 @@ body {
   z-index: 10;
 
   margin-top: 38px;
+  padding: 0 20px;
 
   color: white;
 }
@@ -103,7 +104,7 @@ body {
 
 .gold-btn {
 
-  width: 351px;
+  width: min(351px, 100%);
   height: 56px;
 
   border: none;
@@ -149,7 +150,7 @@ body {
 /* 보라 버튼 기본 */
 
 .purple-btn {
-  width: 351px;
+  width: min(351px, 100%);
   height: 56px;
 
   border-radius: 12px;
@@ -200,7 +201,7 @@ body {
 /* 설명 카드 */
 
 .info-card {
-  width: 351px;
+  width: min(351px, 100%);
 
   padding: 22px 28px;
 
@@ -283,7 +284,7 @@ body {
 
   transform: translateX(-50%);
 
-  width: 430px;
+  width: min(430px, 110vw);
 
   opacity: 0.9;
 

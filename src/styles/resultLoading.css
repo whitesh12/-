@@ -2,8 +2,8 @@
 
 .result-loading-page {
 
-  width: 393px;
-  height: 852px;
+  width: min(393px, 100vw);
+  height: min(852px, 100svh);
 
   margin: 0 auto;
 
@@ -25,7 +25,7 @@
 
   position: absolute;
 
-  top: 316px;
+  top: 37%;
   left: 0;
 
   width: 100%;

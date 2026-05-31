@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Quicksand:wght@300;400&display=swap');
 
 .loading-page {
-  width: 393px;
-  height: 852px;
+  width: min(393px, 100vw);
+  height: min(852px, 100svh);
 
   margin: 0 auto;
 

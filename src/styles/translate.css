@@ -1,6 +1,6 @@
 .translate-page {
   width: min(393px, 100vw);
-  min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
   background-image: url("../assets/translate-bg.png");
   background-size: cover;
@@ -12,7 +12,7 @@
 /* 어둡게 */
 .translate-overlay {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   background: rgba(0, 0, 0, 0.4);
   padding-top: 70px;
   padding-bottom: 50px;
