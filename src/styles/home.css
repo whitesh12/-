@@ -50,9 +50,9 @@ body {
 
 .logo {
   position: absolute;
-  top: clamp(36px, 6.3%, 54px);
+  top: clamp(28px, 5.2%, 42px);
   left: 50%;
-  width: clamp(165px, 44vw, 184px);
+  width: clamp(182px, 49vw, 205px);
   transform: translateX(-50%);
 }
 
@@ -61,7 +61,7 @@ body {
   font-family: "Cormorant Garamond", serif;
 
   position: absolute;
-  top: 31%;
+  top: clamp(235px, 32.2%, 258px);
   left: 50%;
   transform: translateX(-50%);
 
@@ -96,7 +96,7 @@ body {
 
 .subtitle {
   position: absolute;
-  top: 42.4%;
+  top: clamp(330px, 45.5%, 366px);
   left: 50%;
   transform: translateX(-50%);
 
@@ -121,7 +121,7 @@ body {
 .gold-btn {
 
   position: absolute;
-  top: 56.2%;
+  top: clamp(430px, 58.8%, 480px);
   left: 50%;
   transform: translateX(-50%);
 
@@ -172,7 +172,7 @@ body {
 
 .purple-btn {
   position: absolute;
-  top: calc(56.2% + clamp(60px, 7.8dvh, 66px));
+  top: calc(clamp(430px, 58.8%, 480px) + clamp(60px, 7.8dvh, 66px));
   left: 50%;
   transform: translateX(-50%);
 
@@ -228,7 +228,7 @@ body {
 
 .info-card {
   position: absolute;
-  top: 81.2%;
+  top: 82.4%;
   left: 50%;
   transform: translateX(-50%);
 
