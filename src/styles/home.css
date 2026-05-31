@@ -37,29 +37,36 @@ body {
 /* 메인 콘텐츠 */
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   position: relative;
   z-index: 10;
 
+  width: 100%;
   height: 100%;
   margin-top: 0;
-  padding: clamp(10px, 3.6dvh, 38px) 20px clamp(18px, 4dvh, 34px);
+  padding: 0 20px;
 
   color: white;
 }
 
 .logo {
-  width: clamp(128px, 24dvh, 200px);
+  position: absolute;
+  top: clamp(42px, 7.4%, 64px);
+  left: 50%;
+  width: clamp(126px, 34vw, 145px);
+  transform: translateX(-50%);
 }
 
 .title {
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(42px, 14vw, 55px);
+  position: absolute;
+  top: 31.5%;
+  left: 50%;
+
+  width: 100%;
+
+  font-size: clamp(45px, 14vw, 55px);
 
   font-style: normal;
 
@@ -82,10 +89,18 @@ body {
 
   color: transparent;
 
-  margin: clamp(3px, 0.8dvh, 6px) 0 0;
+  margin: 0;
+  text-align: center;
 }
 
 .subtitle {
+  position: absolute;
+  top: 40.7%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+
   font-family: "Gowun Dodum", sans-serif;
 
   font-size: clamp(18px, 5.8vw, 23px);
@@ -95,9 +110,7 @@ body {
 
   text-align: center;
 
-  margin-top: clamp(-7px, -0.8dvh, -3px);
-
-  margin-bottom: clamp(16px, 4dvh, 34px);
+  margin: 0;
 
   color: white;
 }
@@ -106,8 +119,13 @@ body {
 
 .gold-btn {
 
+  position: absolute;
+  top: 52.7%;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: min(351px, 100%);
-  height: clamp(48px, 6.6dvh, 56px);
+  height: clamp(50px, 6.6dvh, 56px);
 
   border: none;
 
@@ -133,7 +151,7 @@ body {
     box-shadow 0.15s ease,
     background 0.15s ease;
 
-    margin-bottom: 10px;
+  margin: 0;
 }
 
 /* 터치 시 효과 */
@@ -142,7 +160,7 @@ body {
 
   background: #CCB933;
 
-  transform: scale(0.98);
+  transform: translateX(-50%) scale(0.98);
 
   box-shadow:
      0 0 18px rgba(212, 191, 45, 0.55),
@@ -152,8 +170,13 @@ body {
 /* 보라 버튼 기본 */
 
 .purple-btn {
+  position: absolute;
+  top: calc(52.7% + clamp(60px, 7.8dvh, 66px));
+  left: 50%;
+  transform: translateX(-50%);
+
   width: min(351px, 100%);
-  height: clamp(48px, 6.6dvh, 56px);
+  height: clamp(50px, 6.6dvh, 56px);
 
   border-radius: 12px;
 
@@ -197,12 +220,17 @@ body {
     0 0 18px rgba(84, 64, 173, 0.55),
     0 0 35px rgba(84, 64, 173, 0.28);
 
-  transform: scale(0.99);
+  transform: translateX(-50%) scale(0.99);
 }
 
 /* 설명 카드 */
 
 .info-card {
+  position: absolute;
+  top: 72.4%;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: min(351px, 100%);
 
   padding: clamp(14px, 2.8dvh, 22px) 28px;
@@ -249,7 +277,7 @@ body {
 
   z-index: 10;
 
-  margin-top: clamp(18px, 5.2dvh, 45px);
+  margin: 0;
 }
 
 .info-card::before {
@@ -281,7 +309,7 @@ body {
 .orbit-image {
   position: absolute;
 
-  bottom: clamp(-150px, -17dvh, -96px);
+  bottom: clamp(-150px, -17dvh, -92px);
   left: 50%;
 
   transform: translateX(-50%);
