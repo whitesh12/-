@@ -52,7 +52,7 @@ body {
   position: absolute;
   top: clamp(42px, 7.4%, 64px);
   left: 50%;
-  width: clamp(126px, 34vw, 145px);
+  width: clamp(145px, 39vw, 164px);
   transform: translateX(-50%);
 }
 
@@ -228,7 +228,7 @@ body {
 
 .info-card {
   position: absolute;
-  top: 74.8%;
+  top: 77.2%;
   left: 50%;
   transform: translateX(-50%);
 
