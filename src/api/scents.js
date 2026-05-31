@@ -1,6 +1,5 @@
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.DEV ? "" : "https://toy-4-be.onrender.com");
+  import.meta.env.VITE_API_BASE_URL || "";
 
 const SCENT_SEARCH_API_URL =
   import.meta.env.VITE_SCENT_SEARCH_API_URL ||

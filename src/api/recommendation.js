@@ -12,8 +12,7 @@ const DEFAULT_RECOMMENDATION = {
 };
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.DEV ? "" : "https://toy-4-be.onrender.com");
+  import.meta.env.VITE_API_BASE_URL || "";
 
 const RECOMMEND_API_URL =
   import.meta.env.VITE_RECOMMEND_API_URL ||
