@@ -2,14 +2,15 @@
 
 .result-page {
 
-  width: 393px;
+  width: min(393px, 100vw);
   min-height: 852px;
 
   margin: 0 auto;
 
   position: relative;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   background: #10101A;
 }
@@ -60,7 +61,7 @@
 
   min-height: 852px;
 
-  padding: 110px 26px 36px;
+  padding: 110px 26px 40px;
 
   box-sizing: border-box;
 }
@@ -156,6 +157,8 @@
   flex-direction: column;
 
   align-items: center;
+
+  overflow: visible;
 }
 
 .result-brand {
@@ -179,6 +182,8 @@
 
 .result-perfume-card h2 {
 
+  width: 100%;
+
   margin: 38px 0 0;
 
   color: #FFF;
@@ -196,6 +201,10 @@
   line-height: 1.24;
 
   white-space: pre-line;
+
+  word-break: keep-all;
+
+  overflow-wrap: anywhere;
 }
 
 .result-summary {
@@ -223,6 +232,8 @@
   word-break: keep-all;
 
   white-space: normal;
+
+  overflow-wrap: anywhere;
 }
 
 .result-description {
@@ -248,6 +259,8 @@
   word-break: keep-all;
 
   white-space: normal;
+
+  overflow-wrap: anywhere;
 }
 
 .result-reason {
@@ -285,6 +298,8 @@
   word-break: keep-all;
 
   white-space: normal;
+
+  overflow-wrap: anywhere;
 }
 
 .result-tags {
@@ -293,9 +308,13 @@
 
   justify-content: center;
 
-  gap: 18px;
+  flex-wrap: wrap;
+
+  gap: 12px 16px;
 
   margin-top: 42px;
+
+  width: 100%;
 }
 
 .result-tags span {
@@ -334,6 +353,8 @@
   word-break: keep-all;
 
   white-space: normal;
+
+  overflow-wrap: anywhere;
 }
 
 .result-retry-btn {
@@ -367,7 +388,7 @@
 
 .result-retry-btn {
 
-  width: 326px;
+  width: min(326px, 100%);
   height: 50px;
 
   margin-top: 66px;

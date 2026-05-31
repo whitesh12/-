@@ -64,6 +64,10 @@
 
   margin: 48px 0 0;
 
+  width: 100%;
+
+  padding: 0 24px;
+
   color: #FD0;
 
   font-family:
@@ -76,5 +80,11 @@
 
   font-weight: 400;
 
-  line-height: normal;
+  line-height: 1.45;
+
+  white-space: pre-line;
+
+  word-break: keep-all;
+
+  box-sizing: border-box;
 }

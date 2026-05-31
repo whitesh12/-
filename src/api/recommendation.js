@@ -120,10 +120,14 @@ export async function fetchRecommendation(preferenceData) {
   if (!response.ok) {
 
     const errorBody = await response.text();
-
-    throw new Error(
+    const error = new Error(
       `Recommendation request failed: ${response.status} ${errorBody}`
     );
+
+    error.status = response.status;
+    error.body = errorBody;
+
+    throw error;
   }
 
   const data = await response.json();

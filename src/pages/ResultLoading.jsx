@@ -47,7 +47,11 @@ function ResultLoading() {
         console.warn(error);
 
         if (isMounted) {
-          setErrorMessage("추천 결과를 불러오지 못했어요. 잠시 후 다시 시도해주세요.");
+          setErrorMessage(
+            error.status === 429
+              ? "오늘 AI 추천 가능 횟수를 모두 사용했어요.\n잠시 후 다시 시도해주세요."
+              : "AI 추천 가능 횟수를 모두 사용했거나 연결이 불안정해요.\n잠시 후 다시 시도해주세요."
+          );
           return;
         }
       }

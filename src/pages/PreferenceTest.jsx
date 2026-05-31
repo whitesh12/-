@@ -229,7 +229,9 @@ function PreferenceTest() {
 
       preferredScents,
 
-      dislikedScents,
+      dislikedScents: dislikedScents.includes(dislikedNoneOption)
+        ? []
+        : dislikedScents,
 
       usageOccasion
     };

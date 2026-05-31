@@ -131,10 +131,10 @@
 /* 결과 컨테이너 */
 .results-container {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
 
 .result-wrapper {
@@ -144,7 +144,7 @@
 /* 카테고리 */
 .category-title {
   width: min(330px, calc(100% - 40px));
-  margin: 0 auto 10px;
+  margin: 0 auto 8px;
   color: #E4C85C;
   font-family: "Gowun Dodum";
   font-size: 16px;
@@ -157,7 +157,7 @@
   margin: 0 auto;
   background: #F5F5F5;
   border-radius: 20px;
-  padding: 16px;
+  padding: 14px 16px;
   box-sizing: border-box;
 }
 
