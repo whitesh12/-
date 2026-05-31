@@ -61,7 +61,7 @@ body {
   font-family: "Cormorant Garamond", serif;
 
   position: absolute;
-  top: 31.5%;
+  top: 28.7%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -96,7 +96,7 @@ body {
 
 .subtitle {
   position: absolute;
-  top: 40.7%;
+  top: 40.2%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -228,7 +228,7 @@ body {
 
 .info-card {
   position: absolute;
-  top: 72.4%;
+  top: 74.8%;
   left: 50%;
   transform: translateX(-50%);
 
